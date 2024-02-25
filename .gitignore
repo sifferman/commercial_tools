@@ -2,15 +2,26 @@
 *.lib
 *.db
 
+*_lc_build
+*.dc.v
+*_dc_build
+simv
+ucli.key
+vc_hdrs.h
+simv.daidir
+csrc
+
 *.genus.v
 *_genus_build
 fv
 .rs_*.tstamp
+xrun.history
+xrun.log
+xcelium.d
+
+work
+transcript
 
 *.vivado.v
 *_vivado_build
 .Xil
-
-*_lc_build
-*.dc.v
-*_dc_build
