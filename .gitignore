@@ -1,0 +1,14 @@
+
+*.lib
+*.db
+
+*.genus.v
+*_genus_build
+fv
+.rs_*.tstamp
+
+*.vivado.v
+*_vivado_build
+.Xil
+
+*.dc.v
