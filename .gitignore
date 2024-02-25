@@ -11,4 +11,6 @@ fv
 *_vivado_build
 .Xil
 
+*_lc_build
 *.dc.v
+*_dc_build

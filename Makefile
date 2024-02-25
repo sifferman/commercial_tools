@@ -19,11 +19,15 @@ clean_vivado:
 	rm -rf *.vivado.v *_vivado_build .Xil
 
 %.db: %.lib lc_shell.tcl
-	LIB_FILE=$* lc_shell -f lc_shell.tcl
+	mkdir -p $*_lc_build
+	LIB_FILE=$* lc_shell -f lc_shell.tcl -no_log -output_log_file $*_lc_build/lc_output.txt
 
 %.dc.v: %.sv sky130_fd_sc_hd__tt_025C_1v80.db dc.tcl
-	TOP_MODULE=$* design_vision -no_init -64bit -f dc.tcl -output_log_file dc_output.txt
+	mkdir -p $*_dc_build
+	TOP_MODULE=$* design_vision -no_init -64bit -no_log -f dc.tcl -output_log_file $*_dc_build/dc_output.txt
 
 clean_dc:
+	rm -rf *_lc_build
+	rm -rf test.dc.v *_dc_build
 
 clean: clean_genus clean_vivado clean_dc
